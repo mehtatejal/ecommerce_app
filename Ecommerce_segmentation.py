@@ -6,13 +6,9 @@ import squarify
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
-import plotly.graph_objs as go
-from plotly.offline import iplot
 import warnings
 warnings.filterwarnings('ignore')
 # sns.set_style('whitegrid')
-import mpld3
-import plotly.graph_objs as go
 from operator import attrgetter
 import datetime
 
