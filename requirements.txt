@@ -1,2 +1,6 @@
 scikit-learn
 squarify
+seaborn
+matplotlib
+datetime
+operator
