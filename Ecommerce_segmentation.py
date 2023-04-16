@@ -22,7 +22,7 @@ st.title("E-Commerce Customer Data Segmentation")
 from PIL import Image
 st.subheader("Hello! Welcome to My Page of E-Commerce Customer Data Segmentation")
 
-image = Image.open("MarketSegment.png")
+image = Image.open("customer_analysis.png")
 st.image(image,use_column_width = True)
 
 with st.expander("About this App"):
