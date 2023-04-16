@@ -58,7 +58,7 @@ with st.expander("About this App"):
     st.write("")
 
 #read data
-df = pd.read_csv('processed_customer_data.csv',parse_dates = ['InvoiceDate'],infer_datetime_format = True)
+df = pd.read_csv('processed_customer_data.zip',parse_dates = ['InvoiceDate'],infer_datetime_format = True)
 
 #show data
 with st.expander("Show the E-Commerce dataframe"):
