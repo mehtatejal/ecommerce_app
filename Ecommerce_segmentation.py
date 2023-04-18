@@ -31,7 +31,7 @@ with st.expander("About this App"):
 
     st.markdown(
         """
-    This app is built on transcational data of e-commerce store selling gift items for all occasions. This app is designed to help businesses gain valuable insights into their customer base and optimize their marketing and promotional strategies. 
+    This app is built on transactional data of E-Commerce store selling gift items for all occasions. This app is designed to help businesses gain valuable insights into their customer base and optimize their marketing and promotional strategies. 
     
     The original dataset used for segmentation contained information about an individual's purchase:
     - Invoice Number 
@@ -61,7 +61,7 @@ with st.expander("About this App"):
 df = pd.read_csv('processed_customer_data.zip',parse_dates = ['InvoiceDate'],infer_datetime_format = True)
 
 #show data
-with st.expander("Show the E-Commerce dataframe"):
+with st.expander("Show the E-Commerce Dataframe"):
     st.write(df)
 
 # ----------------- Redict RFM ANALYSIS -----------------------
@@ -77,7 +77,7 @@ with st.expander("Show the RFM Analysis "):
 
         1. Recency (R): How recently did the customer make a purchase?
         2. Frequency (F): How often do they make purchases?
-        3. Monetary value (M): How much money do they spend?
+        3. Monetary (M): How much money do they spend?
 
         As a result of our analysis, customers were divided into different segments 
         based on their RF score.  
@@ -86,7 +86,7 @@ with st.expander("Show the RFM Analysis "):
         efforts to specific customer segments, such as high-value customers or 
         customers who are at risk of churning. """)
 
-    st.write( """ The Heat Map shows the final results of our customer segmentation analysis. """ )
+    st.write( """ The Map below shows the final results of our customer segmentation analysis. """ )
 
     #read data
     rfm = pd.read_csv('RFM.csv')
@@ -110,7 +110,7 @@ with st.expander("Show the RFM Analysis "):
     color_discrete_sequence=px.colors.qualitative.Alphabet
     )
     fig.update_layout(
-        title="Customer Segmentation Map",
+	title=dict(text="Customer Segmentation Map", x=0.5, y=0.9, xanchor='center', yanchor='top'),
         xaxis_title="Frequency",
         yaxis_title="Recency",
         font=dict(size=15)
@@ -124,8 +124,8 @@ with st.expander("Show the RFM Analysis "):
      - The customers who were once active but have become significantly less active over time were labeled as Churned Customers.
      - The customers who make purchases with low frequency were labeled as Irregular Customers.
      - The customers who make moderate purchases over time were labeled as Need Attention Customers.
-     - The customers who consistently make high purchases over time were labeled as Loyal Customers.
-     - The customers who have recently start making purchases were labeled as New Customers.
+     - The customers who consistently make high number of purchases over time were labeled as Loyal Customers.
+     - The customers who have recently started making purchases were labeled as New Customers.
      - The customers who are moderate buyers and have made recent purchases were labeled as Potential Loyalists.
      - The customers who make very large number of purchases every time were labeled as Top Customers.
     """)
@@ -189,8 +189,9 @@ if __name__ == '__main__':
 with st.expander("Show the Cohort Analysis "):
     st.write("<h2 style='text-align: center; color: green;'>COHORT ANALYSIS</h2>", unsafe_allow_html=True)
 
-    st.write( """Here, monthly cohort analysis is done that groups customer based on their first purchase. 
+    st.write( """Here, monthly cohort analysis is done that groups customers based on their first purchase. 
         The information provided by this analysis includes the following:
+	
          - The number of customers in each cohort
          - The retention rate of each cohort over time
          - The overall retention rate of the customer base """)
@@ -230,15 +231,15 @@ with st.expander("Show the Cohort Analysis "):
                          zmin=0.0,
                          zmax=50.0,
                          colorbar=dict(title="%"),
-                         hovertemplate="Retention: %{z:.0f}%<br>" +
-                                   "Cohort Group : %{y}<br>" +
+                         hovertemplate="Retention Percentage : %{z:.0f}%<br>" +
+                                   "Cohort First Purchase : %{y}<br>" +
                                    "Retention Period : %{x}" +
                                    " months <extra></extra>")
 
     # create the figure layout
     layout = go.Layout(title=dict(text="Monthly Cohorts : User Retention", x=0.5, y=0.9, xanchor='center', yanchor='top'),
-                       xaxis=dict(title="Cohort Period : Time since the first purchase"),
-                       yaxis=dict(title="Cohort Group : First Purchase"))
+                       xaxis=dict(title="Cohort Period : Time since the first purchase", titlefont=dict(weight="bold")),
+                       yaxis=dict(title="Cohort Group : First Purchase", titlefont=dict(weight="bold")))
 
     # create the figure and show it
     fig = go.Figure(data=[heatmap], layout=layout)
