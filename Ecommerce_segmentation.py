@@ -9,7 +9,6 @@ import matplotlib.colors as mcolors
 import warnings
 warnings.filterwarnings('ignore')
 # sns.set_style('whitegrid')
-import mpld3
 from operator import attrgetter
 import datetime
 import plotly.graph_objects as go
