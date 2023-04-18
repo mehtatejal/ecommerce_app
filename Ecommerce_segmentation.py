@@ -232,7 +232,7 @@ with st.expander("Show the Cohort Analysis "):
                          zmax=50.0,
                          colorbar=dict(title="%"),
                          hovertemplate="Retention Percentage : %{z:.0f}%<br>" +
-                                   "Cohort First Purchase : %{y}<br>" +
+                                   "First Purchase : %{y}<br>" +
                                    "Retention Period : %{x}" +
                                    " months <extra></extra>")
 
