@@ -23,6 +23,8 @@ st.subheader("Hello! Welcome to My Page of E-Commerce Customer Data Segmentation
 image = Image.open("customer_analysis.png")
 st.image(image,use_column_width = True)
 
+st.sidebar.info('This app is created and designed by  [Tejal Mehta](https://www.linkedin.com/in/tejalmehta21/)')
+
 with st.expander("About this App"):
 
     st.write("")
