@@ -238,8 +238,8 @@ with st.expander("Show the Cohort Analysis "):
 
     # create the figure layout
     layout = go.Layout(title=dict(text="Monthly Cohorts : User Retention", x=0.5, y=0.9, xanchor='center', yanchor='top'),
-                       xaxis=dict(title="Cohort Period : Time since the first purchase", titlefont=dict(weight="bold")),
-                       yaxis=dict(title="Cohort Group : First Purchase", titlefont=dict(weight="bold")))
+                       xaxis=dict(title="Cohort Period : Time since the first purchase", titlefont=dict(size=18,family='Arial, sans-serif',color='black',weight='bold')),
+                       yaxis=dict(title="Cohort Group : First Purchase", titlefont=dict(size=18,family='Arial, sans-serif',color='black',weight='bold')))
 
     # create the figure and show it
     fig = go.Figure(data=[heatmap], layout=layout)
