@@ -7,6 +7,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import warnings
+import plotly.express as px
 warnings.filterwarnings('ignore')
 # sns.set_style('whitegrid')
 from operator import attrgetter
@@ -99,32 +100,49 @@ with st.expander("Show the RFM Analysis "):
 
 
     segments = rfm["segment"].value_counts().sort_values(ascending=False)
-    fig = plt.gcf()
-    ax = fig.add_subplot()
-    fig.set_size_inches(25, 10)
-    squarify.plot(
-        sizes=segments,
-        label=[label for label in seg_map.values()],
-        color=[
-            "#AFB6B5",
-            "#F0819A",
-            "#926717",
-            "#F0F081",
-            "#81D5F0",
-            "#C78BE5",
-            "#748E80",
-            "#FAAF3A",
-            "#7B8FE4",
-            "#86E8C0",
-        ],
-        pad=False,
-        bar_kwargs={"alpha": 1},
-        text_kwargs={"fontsize": 15},
+#     fig = plt.gcf()
+#     ax = fig.add_subplot()
+#     fig.set_size_inches(25, 10)
+#     squarify.plot(
+#         sizes=segments,
+#         label=[label for label in seg_map.values()],
+#         color=[
+#             "#AFB6B5",
+#             "#F0819A",
+#             "#926717",
+#             "#F0F081",
+#             "#81D5F0",
+#             "#C78BE5",
+#             "#748E80",
+#             "#FAAF3A",
+#             "#7B8FE4",
+#             "#86E8C0",
+#         ],
+#         pad=False,
+#         bar_kwargs={"alpha": 1},
+#         text_kwargs={"fontsize": 15},
+#     )
+#     plt.title("Customer Segmentation Map", fontsize=20)
+#     plt.xlabel("Frequency", fontsize=10)
+#     plt.ylabel("Recency", fontsize=10)
+#     st.pyplot(plt.gcf())
+
+    segments = rfm["segment"].value_counts().sort_values(ascending=False)
+    
+    fig = px.treemap(
+    names=[label for label in seg_map.values()],
+    parents=['' for _ in seg_map.values()],
+    values=segments.values,
+    hovertemplate='<b>%{label}</b><br>Count: %{value}',
+    color_discrete_sequence=px.colors.qualitative.Alphabet
     )
-    plt.title("Customer Segmentation Map", fontsize=20)
-    plt.xlabel("Frequency", fontsize=10)
-    plt.ylabel("Recency", fontsize=10)
-    st.pyplot(plt.gcf())
+    fig.update_layout(
+        title="Customer Segmentation Map",
+        xaxis_title="Frequency",
+        yaxis_title="Recency",
+        font=dict(size=15)
+    )
+    st.plotly_chart(fig)
 
     st.write( """ 
 
