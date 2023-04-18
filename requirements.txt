@@ -3,4 +3,4 @@ squarify
 seaborn
 matplotlib
 datetime
-
+plotly
