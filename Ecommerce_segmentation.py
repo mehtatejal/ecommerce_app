@@ -180,8 +180,8 @@ def main():
         st.sidebar.success(result)
     
 
-if __name__ == '__main__':
-        main ()    
+# if __name__ == '__main__':
+#         main ()    
 
 
 # ----------------------- COHORT ANALYSIS ---------------------
