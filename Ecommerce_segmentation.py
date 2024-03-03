@@ -172,11 +172,11 @@ def main():
         
         result = ""
 
-        # when button is clicked, make the prediction and store it
+         # when button is clicked, make the prediction and store it
         if st.sidebar.button("Which Segment this customer belongs to?"):
             # result=segment_customers(today_Date,max_date,frequency,monetary)
-             # -- as giving error so commented for a while being
-	     result= predict(rfm)
+            result= predict(rfm)
+        
         st.sidebar.success(result)
     
 
