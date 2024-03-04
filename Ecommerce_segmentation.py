@@ -259,8 +259,7 @@ with st.expander("Show the Cohort Analysis "):
      """)
 
 
-st.write("<p style='text-align:center; font-style: italic;'>Special thanks to my husband Dishit Parekh ❤️ for motivating me to create this app!
-</p>", unsafe_allow_html=True)
+st.write("<p style='text-align:center; font-style: italic;'>Special thanks to my husband Dishit Parekh ❤️ for motivating me to create this app!</p>", unsafe_allow_html=True)
 
 
 
