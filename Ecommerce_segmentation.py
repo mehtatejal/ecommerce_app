@@ -28,10 +28,10 @@ st.sidebar.info('This app is created and designed by  [Tejal Mehta](https://www.
 
 # image2 = Image.open("Profile_Photo.jpg")
 st.sidebar.markdown(
-    "<img src='https://raw.githubusercontent.com/mehtatejal/ecommerce_app/main/Profile_Photo.jpg' alt='profile_photo' style='width:200px;height:300px;'>",
+    "<img src='https://raw.githubusercontent.com/mehtatejal/ecommerce_app/main/Profile_Photo.jpg' alt='profile_photo' style='width:200px;height:350px;'>",
     unsafe_allow_html=True
 )
-
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.info('Want to check out my other cool app. Please [click here](https://mehtatejal-market-segment-app-market-segment-9q4d9s.streamlit.app/)')
 
 with st.expander("About this App"):
@@ -258,7 +258,9 @@ with st.expander("Show the Cohort Analysis "):
     st.write( """When a heatmap is used to display the retention rates of different cohorts over time, it becomes apparent that 50% of the customers who registered in December 2010 remained active after 11 months. Additionally, the retention rate of early sign-ups is higher than that of later ones.
      """)
 
-st.write("Special thanks to my husband Dishit Parekh ❤️ for motivating me to create this app!")
+<br>
+st.write("<p style='text-align:center; font-style: italic;'>Special thanks to my husband Dishit Parekh ❤️ for motivating me to create this app!
+</p>", unsafe_allow_html=True)
 
 
 
