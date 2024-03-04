@@ -258,7 +258,7 @@ with st.expander("Show the Cohort Analysis "):
     st.write( """When a heatmap is used to display the retention rates of different cohorts over time, it becomes apparent that 50% of the customers who registered in December 2010 remained active after 11 months. Additionally, the retention rate of early sign-ups is higher than that of later ones.
      """)
 
-<br>
+
 st.write("<p style='text-align:center; font-style: italic;'>Special thanks to my husband Dishit Parekh ❤️ for motivating me to create this app!
 </p>", unsafe_allow_html=True)
 
