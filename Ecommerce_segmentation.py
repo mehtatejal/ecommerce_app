@@ -14,6 +14,7 @@ import datetime
 import plotly.graph_objects as go
 import plotly.express as px
 
+#this app is dedicated to my husband Dishit Parekh. He was my main motivation behind this app
 # Set the title of the app
 st.title("E-Commerce Customer Data Segmentation")
 
@@ -139,7 +140,7 @@ with st.expander("Show the RFM Analysis "):
 # segment_customers()
 def predict(df):
     #load the model
-    crm_pipeline = pickle.load(open('crm_pipeline.pkl','rb'))
+    crm_pipeline = pickle.load(open('crm_pipeline_xgboost.pkl','rb'))
     
     prediction= crm_pipeline.predict(df)
     output_str = prediction[0]
@@ -248,6 +249,8 @@ with st.expander("Show the Cohort Analysis "):
 
     st.write( """When a heatmap is used to display the retention rates of different cohorts over time, it becomes apparent that 50% of the customers who registered in December 2010 remained active after 11 months. Additionally, the retention rate of early sign-ups is higher than that of later ones.
      """)
+
+st.write("Special thanks to my husband for motivating me to create this app!")
 
 
 
