@@ -170,8 +170,8 @@ def main():
 
 
         recency = (today_Date - max_date).days
-        frequency = st.sidebar.number_input("How many times customer has made purchase with you ?")
-        monetary = st.sidebar.number_input("What is the total amount of purchase the customer has made with you till now ?")
+        frequency = st.sidebar.number_input("How many times customer has made purchase with you ?", format="%d")
+        monetary = st.sidebar.number_input("What is the total amount of purchase the customer has made with you till now ?", format="%d")
         
         # Combine the three variables into a dictionary
         data = {'recency': recency, 'frequency': frequency, 'monetary': monetary}
