@@ -26,6 +26,11 @@ st.image(image,use_column_width = True)
 
 st.sidebar.info('This app is created and designed by  [Tejal Mehta](https://www.linkedin.com/in/tejalmehta21/)')
 
+image2 = Image.open("Profile_Photo.jpg")
+st.sidebar.image("image2", use_column_width=True)
+
+st.sidebar.info('Want to check out my other cool app. Please [click here](https://mehtatejal-market-segment-app-market-segment-9q4d9s.streamlit.app/)')
+
 with st.expander("About this App"):
 
     st.write("")
@@ -250,7 +255,7 @@ with st.expander("Show the Cohort Analysis "):
     st.write( """When a heatmap is used to display the retention rates of different cohorts over time, it becomes apparent that 50% of the customers who registered in December 2010 remained active after 11 months. Additionally, the retention rate of early sign-ups is higher than that of later ones.
      """)
 
-st.write("Special thanks to my husband for motivating me to create this app!")
+st.write("Special thanks to my husband Dishit Parekh ❤️ for motivating me to create this app!")
 
 
 
