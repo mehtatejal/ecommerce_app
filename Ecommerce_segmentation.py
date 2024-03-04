@@ -27,7 +27,7 @@ st.image(image,use_column_width = True)
 st.sidebar.info('This app is created and designed by  [Tejal Mehta](https://www.linkedin.com/in/tejalmehta21/)')
 
 # image2 = Image.open("Profile_Photo.jpg")
-st.sidebar.image("https://raw.githubusercontent.com/mehtatejal/ecommerce_app/main/Profile_Photo.jpg", use_column_width=True)
+st.sidebar.image("https://raw.githubusercontent.com/mehtatejal/ecommerce_app/main/Profile_Photo.jpg", use_column_width=True,height=50)
 
 st.sidebar.info('Want to check out my other cool app. Please [click here](https://mehtatejal-market-segment-app-market-segment-9q4d9s.streamlit.app/)')
 
