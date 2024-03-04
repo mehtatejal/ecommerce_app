@@ -154,14 +154,15 @@ def predict(df):
     output_str = prediction[0]
     return output_str
 
-st.sidebar.text(""" 
-    Want to know your customer? 
-    We are here to help you. 
-    Fill the details below 
-    and we will segment the customer for you.""")
-    # st.write(""" Want to know your customer, click the below button !! """)
-
-    # if st.button("Click Here"):
+st.sidebar.write("""
+    <p style='text-align:center; font-size:18px; font-weight:bold; color:#007BFF;'>
+    Want to understand your customers better?
+    </p>
+    <p style='text-align:center; font-size:16px; color:#6C757D;'>
+    We're here to assist you. Fill in the details below and we'll segment your customers for you!
+    </p>
+""", unsafe_allow_html=True)
+    
 
 
 def main():    
@@ -170,8 +171,8 @@ def main():
 
 
         recency = (today_Date - max_date).days
-        frequency = st.sidebar.number_input("How many times customer has made purchase with you ?", format="%d",step=None)
-        monetary = st.sidebar.number_input("What is the total amount of purchase the customer has made with you till now ?", format="%d",step=None)
+        frequency = int(st.sidebar.number_input("How many times customer has made purchase with you ?", format="%d",step=None))
+        monetary = int(st.sidebar.number_input("What is the total amount of purchase the customer has made with you till now ?", format="%d",step=None))
         
         # Combine the three variables into a dictionary
         data = {'recency': recency, 'frequency': frequency, 'monetary': monetary}
