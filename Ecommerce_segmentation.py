@@ -28,7 +28,7 @@ st.sidebar.info('This app is created and designed by  [Tejal Mehta](https://www.
 
 # image2 = Image.open("Profile_Photo.jpg")
 st.sidebar.markdown(
-    "<img src='https://raw.githubusercontent.com/mehtatejal/ecommerce_app/main/Profile_Photo.jpg' alt='profile_photo' style='width:200px;height:350px;'>",
+    "<div style='display: flex; justify-content: center;'><img src='https://raw.githubusercontent.com/mehtatejal/ecommerce_app/main/Profile_Photo.jpg' alt='profile_photo' style='width:200px;height:350px;'>",
     unsafe_allow_html=True
 )
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
